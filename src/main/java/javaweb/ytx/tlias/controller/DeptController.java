@@ -21,7 +21,7 @@ public class DeptController {
         return Result.success(deptList);
     }
 
-    @RequestMapping("/depts/{id}")
+    @RequestMapping(value = "/depts/{id}",method = RequestMethod.DELETE)
     public Result delete(@PathVariable Integer id){
         log.info("删除id为"+id+"的部门数据");
         int i=deptService.delete(id);
@@ -32,6 +32,11 @@ public class DeptController {
         }
     }
 
-
+    @RequestMapping(value = "/depts",method = RequestMethod.POST)
+    public Result insert(@RequestBody Dept dept){
+        log.info("新增部门");
+        deptService.insert(dept);
+        return Result.success();
+    }
 
 }

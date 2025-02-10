@@ -11,4 +11,6 @@ public interface DeptService {
     List<Dept> list();
 
     int delete(Integer id);
+
+    void insert(Dept dept);
 }
