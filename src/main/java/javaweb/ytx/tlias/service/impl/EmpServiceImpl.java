@@ -22,5 +22,10 @@ public class EmpServiceImpl implements EmpService {
         return new PageBean(count,empList);
     }
 
+    @Override
+    public Emp listById(Integer id) {
+        return empMapper.listById(id);
+    }
+
 
 }

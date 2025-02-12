@@ -13,4 +13,7 @@ public interface EmpMapper {
 
     @Select("select * from tlias.emp limit #{start},#{pageSize}")
     List<Emp> page(Integer start,Integer pageSize);
+
+    @Select("select * from tlias.emp where id=#{id}")
+    Emp listById(Integer id);
 }
